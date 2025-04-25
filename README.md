@@ -22,6 +22,7 @@ A **Streamlit-based web application** for analyzing personal or business financi
 ```bash
 git clone https://github.com/asileayuba/financeapp.git
 cd financeapp
+```
 
 2. **Install Required Packages:** Make sure you have Python 3.7+ installed and then install dependencies:
 
