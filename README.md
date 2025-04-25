@@ -27,22 +27,25 @@ cd financeapp
 
 ```bash
 pip install -r requirements.txt
+```
 
 2. **Run the App**
 
 ```bash
 streamlit run main.py
-
+```
 
 ## 📁 Project Structure
-
+```bash
 finance-app/
 ├── main.py               # Main Streamlit application
 ├── categories.json      # Stores category-keyword mappings
 ├── requirements.txt     # List of required packages
 └── README.md            # Project documentation
+```
 
 
+---
 ## 🙌 Contributing
 
 Contributions are welcome!
