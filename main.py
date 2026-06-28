@@ -7,7 +7,7 @@ import os
 import time
 
 # --- Configure the Streamlit page ---
-st.set_page_config(page_title="Spendify", page_icon="🧾", layout="wide")
+st.set_page_config(page_title="FinSight", page_icon="🧾", layout="wide")
 
 # --- JSON file to store category-keyword mappings ---
 category_file = "categories.json"
@@ -72,7 +72,7 @@ def add_keyword_to_category(category, keyword):
 
 # --- Main app interface ---
 def main():
-    st.title("Spendify Dashboard 🧾")
+    st.title("FinSight Dashboard 🧾")
 
     # --- Upload CSV transaction file ---
     uploaded_file = st.file_uploader("Upload your transaction CSV file", type=["csv"])
