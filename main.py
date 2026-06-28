@@ -7,7 +7,7 @@ import os
 import time
 
 # --- Configure the Streamlit page ---
-st.set_page_config(page_title="Finance App", page_icon="🧾", layout="wide")
+st.set_page_config(page_title="Spendify", page_icon="🧾", layout="wide")
 
 # --- JSON file to store category-keyword mappings ---
 category_file = "categories.json"
@@ -72,7 +72,7 @@ def add_keyword_to_category(category, keyword):
 
 # --- Main app interface ---
 def main():
-    st.title("Finance Dashboard 🧾")
+    st.title("Spendify Dashboard 🧾")
 
     # --- Upload CSV transaction file ---
     uploaded_file = st.file_uploader("Upload your transaction CSV file", type=["csv"])
@@ -81,6 +81,15 @@ def main():
         df = load_transactions(uploaded_file)
 
         if df is not None:
+            # --- Currency Filter ---
+            if "Currency" in df.columns:
+                currencies = df["Currency"].unique().tolist()
+                default_index = currencies.index("NGN") if "NGN" in currencies else 0
+                selected_currency = st.sidebar.selectbox("Select Currency", currencies, index=default_index)
+                df = df[df["Currency"] == selected_currency].copy()
+            else:
+                selected_currency = "NGN"
+
             # Split data into debits (expenses) and credits (payments)
             debits_df = df[df["Debit/Credit"].str.lower() == "debit"].copy()
             credits_df = df[df["Debit/Credit"].str.lower() == "credit"].copy()
@@ -109,7 +118,7 @@ def main():
                     st.session_state.debits_df[["Date", "Details", "Amount", "Category"]],
                     column_config={
                         "Date": st.column_config.DateColumn("Date", format="DD/MM/YY"),
-                        "Amount": st.column_config.NumberColumn("Amount", format="%.2f NGN"),
+                        "Amount": st.column_config.NumberColumn("Amount", format=f"%.2f {selected_currency}"),
                         "Category": st.column_config.SelectboxColumn(
                             "Category",
                             options=list(st.session_state.categories.keys())
@@ -150,7 +159,7 @@ def main():
                 st.dataframe(
                     category_totals,
                     column_config={
-                        "Amount": st.column_config.NumberColumn("Amount", format="%.2f NGN")
+                        "Amount": st.column_config.NumberColumn("Amount", format=f"%.2f {selected_currency}")
                     },
                     use_container_width=True,
                     hide_index=True

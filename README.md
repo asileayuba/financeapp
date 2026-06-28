@@ -1,4 +1,4 @@
-# 🧾 Finance App
+# 🧾 Spendify
 
 A **Streamlit-based web application** for analyzing personal or business financial transactions. This app allows users to upload CSV bank transaction data, automatically categorize expenses using customizable keywords, and visualize their finances with interactive charts.
 
@@ -11,6 +11,7 @@ A **Streamlit-based web application** for analyzing personal or business financi
 - 🛠️ **Editable Categories:** Add, edit, and assign categories directly from the dashboard.
 - 📊 **Expense Visualization:** View categorized expenses in tabular and pie chart formats.
 - 💰 **Debits & Credits Tabs:** Separate views for expenses (debits) and payments/income (credits).
+- 🌍 **Global & Multi-Currency Support:** Dynamically filter and view transactions by currency (e.g. NGN, USD).
 - 🔐 **Persistent State:** Category mappings are saved in a local JSON file.
 
 ---
@@ -38,7 +39,7 @@ streamlit run main.py
 
 ## 📁 Project Structure
 ```bash
-finance-app/
+spendify/
 ├── main.py               # Main Streamlit application
 ├── categories.json      # Stores category-keyword mappings
 ├── requirements.txt     # List of required packages

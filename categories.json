@@ -1,16 +1,44 @@
 {
-  "Uncategorized": [
-    "AMAZON AE"
-  ],
+  "Uncategorized": [],
   "Shopping": [
-    "NOON.COM"
+    "JUMIA",
+    "KONGA",
+    "AMAZON"
   ],
-  "Tavel": [],
-  "Insurance": [
-    "EMIRATES INSURANCE"
+  "Groceries": [
+    "SHOPRITE",
+    "SPAR",
+    "MARKET SQUARE"
+  ],
+  "Transportation": [
+    "BOLT",
+    "UBER",
+    "INDRIVE"
+  ],
+  "Utilities": [
+    "MTN",
+    "AIRTEL",
+    "GLO",
+    "AEDC",
+    "DSTV",
+    "GOTV"
   ],
   "Bank Fee": [
-    "ADCB BANK FEE"
+    "GTBANK CHARGE",
+    "ACCESS BANK FEE",
+    "STAMP DUTY",
+    "SMS ALERT"
   ],
-  "Subscription": []
+  "Subscription": [
+    "NETFLIX",
+    "SPOTIFY",
+    "APPLE.COM",
+    "CHATGPT",
+    "AWS"
+  ],
+  "Food & Dining": [
+    "KFC",
+    "CHICKEN REPUBLIC",
+    "DOMINOS"
+  ]
 }
